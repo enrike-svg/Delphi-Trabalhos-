@@ -1,4 +1,4 @@
-program Projectatividade3;
+program Projectatividade03milgrau;
 
 {$APPTYPE CONSOLE}
 
@@ -14,29 +14,29 @@ var
 begin
   try
     { TODO -oUser -cConsole Main : Insert code here }
+        { TODO -oUser -cConsole Main : Insert code here }
    for i := 1 to 3 do
    begin
-     write('informe o', i , 'nome: ');
+     write('informe o' , i , 'nome: ');
      Readln(nome[i]);
 
-      Write('Informe a idade de ', nome[i], ': ');
+      Write('Informe a idade de ' , nome[i] , ': ');
     ReadLn(idade[i]);
 
    end;
    somaid :=0;
    for i := 1 to 3 do
    begin
-   Writeln(nome[i],'tem', idade[i], 'anos: ');
+   Writeln(nome[i],'tem' , idade[i] , 'anos: ');
    somaid := somaid + idade[i];
 
 
    end;
-   Writeln(nome[1], ',' ,nome[2], ',' ,nome[3] , 'juntos tem', somaid ,'anos');
+   Writeln(nome[1], ',' , nome[2], ',' , nome[3] , 'juntos tem' , somaid , 'anos');
 
-
-
+   Readln
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);
-
+  end;
 end.

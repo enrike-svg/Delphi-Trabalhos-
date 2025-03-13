@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{7E129B12-71F2-43AF-91BB-6A9A76BDDEC1}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Atividade7.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Atividade8.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Atividade7">
+        <MSBuild Projects="Atividade7.dproj"/>
+    </Target>
+    <Target Name="Atividade7:Clean">
+        <MSBuild Projects="Atividade7.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Atividade7:Make">
+        <MSBuild Projects="Atividade7.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Atividade8">
+        <MSBuild Projects="Atividade8.dproj"/>
+    </Target>
+    <Target Name="Atividade8:Clean">
+        <MSBuild Projects="Atividade8.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Atividade8:Make">
+        <MSBuild Projects="Atividade8.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Atividade7;Atividade8"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Atividade7:Clean;Atividade8:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Atividade7:Make;Atividade8:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
